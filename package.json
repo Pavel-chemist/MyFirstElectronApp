@@ -4,11 +4,14 @@
   "description": "My first Electron app",
   "main": "main.js",
   "scripts": {
-    "test": "test"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
-    "url": "hello-world-electron"
+    "url": "https://github.com/Pavel-chemist/MyFirstElectronApp"
+  },
+  "devDependencies": {
+    "electron": "^19.0.0"
   },
   "keywords": [
     "hello",
