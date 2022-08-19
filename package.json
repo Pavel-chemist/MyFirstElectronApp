@@ -1,0 +1,19 @@
+{
+  "name": "hello-world",
+  "version": "0.0.1",
+  "description": "My first Electron app",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "hello-world-electron"
+  },
+  "keywords": [
+    "hello",
+    "world"
+  ],
+  "author": "Pavel-chemist",
+  "license": "MIT"
+}
