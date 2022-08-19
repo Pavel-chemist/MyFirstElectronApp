@@ -1,11 +1,30 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron');
+const path = require('path');
+
 const createWindow = () => {
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-  })
-  win.loadFile('index.html')
-}
+  console.log('dirname: ', __dirname);
+
+  const appWindow = new BrowserWindow({
+    width: 1024,
+    height: 512,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+    },
+  });
+
+  ipcMain.handle('ping', () => 'QWER!!!');
+
+  appWindow.loadFile('index.html');
+};
+
 app.whenReady().then(() => {
-  createWindow()
-})
+  console.log('application is ready');
+
+  createWindow();
+});
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
